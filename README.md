@@ -27,9 +27,11 @@ The purpose of this script is to scrape the NBS 'noaa-ocs-nationalbathymetry-pds
   ![Script](ReadMe_imgs/HandlerEdit.PNG)
 
 - Update Function Timeout and Ephemeral storage. (Function needs to run long enough to download data from source bucket, and upload to destination. Ephemeral storage needs to meet required size of geopackage)
+  
   ![TimeoutStorage](ReadMe_imgs/TimeoutStorage.PNG)
 
-- Run test to ensure the Lambda Function works. 
+- Run test to ensure the Lambda Function works.
+  
   ![TestEvent](ReadMe_imgs/TestEvent.PNG)
 
  ![TestResults](ReadMe_imgs/TestResults.PNG)
@@ -39,7 +41,9 @@ The purpose of this script is to scrape the NBS 'noaa-ocs-nationalbathymetry-pds
 
 ## Tips for making your script Lambda ready
 - You may need multiple Boto client sessions. In this instance two were used. The first is an anonymous Boto Client to download the data from the source bucket. The second is an S3 Boto Client session. This must be used and will pull the credentials from the Lambda enviornment to give S3 Access. 
+
 ![BotoSessions](ReadMe_imgs/BotoSessions.PNG)
 
 - Make sure to create and properly name the Bucket and Key destination for your data.
+
 ![Destination](ReadMe_imgs/Destination.PNG)
